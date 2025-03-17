@@ -1,6 +1,17 @@
-<h1>Login</h1>
+<h2>Log In</h2>
 
-<form action="/sessions" method="post">
+<%= form_with url: "/login", local: true do |form| %>
+  <p>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+  </p>
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.submit "Log In" %>
+  </p>
+<% end %>
 
-  <button>Login<button>
-</form>
+<p>Don't have an account? <%= link_to "Sign up", signup_path %></p>
